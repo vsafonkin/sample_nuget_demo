@@ -1,0 +1,13 @@
+schedules:
+  - cron: "*/15 * * * *"
+    branches:
+      include:
+      - main
+
+jobs:
+  - job: sample_nuget_test
+    pool:
+      vmImage: windows-2019
+    steps:
+    - pwsh: dotnet build
+    - pwsh: dotnet test --no-build --verbosity normal
