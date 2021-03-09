@@ -1,8 +1,5 @@
 schedules:
   - cron: "*/15 * * * *"
-    branches:
-      include:
-      - main
 
 jobs:
   - job: sample_nuget_test
