@@ -1,0 +1,21 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron:  '*/15 * * * *'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: dotnet build
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
