@@ -1,10 +1,3 @@
-schedules:
-# - cron: "*/15 * * * *"
-  branches:
-    include: [ main ]
-  always: true
-
-
 jobs:
   - job: sample_nuget_test
     pool:
